@@ -1,0 +1,106 @@
+{
+  "project": {
+    "name": "DataSense",
+    "description": "A professional data visualization and analytics platform",
+    "repositoryStructure": {
+      "frontend": {
+        "pages": [
+          {
+            "name": "Home/Landing Page",
+            "path": "/",
+            "description": "Main entry point that can be accessed without signing in. Contains buttons leading to other pages.",
+            "components": ["Navbar", "Logo+Name", "Footer", "CTAButtons"]
+          },
+          {
+            "name": "Register Page",
+            "path": "/register",
+            "description": "User registration page",
+            "components": ["RegistrationForm", "AuthButtons"]
+          },
+          {
+            "name": "Login Page",
+            "path": "/login",
+            "description": "User login page",
+            "components": ["LoginForm", "GoogleAuthButton"]
+          },
+          {
+            "name": "About Page",
+            "path": "/about",
+            "description": "Information about DataSense platform",
+            "components": ["AboutContent", "TeamInfo"]
+          },
+          {
+            "name": "Device Registration",
+            "path": "/device",
+            "description": "Requires login. Page for registering new devices",
+            "components": ["DeviceForm", "AuthGuard"]
+          },
+          {
+            "name": "Device Specific Page",
+            "path": "/device/[id]",
+            "description": "Requires login. Shows information about a specific device",
+            "components": ["DeviceDetails", "AuthGuard"]
+          },
+          {
+            "name": "Dashboard",
+            "path": "/dashboard",
+            "description": "Requires login. Main user dashboard",
+            "components": ["DashboardWidgets", "DataVisualization", "AuthGuard"]
+          },
+          {
+            "name": "Devices Page",
+            "path": "/devices",
+            "description": "Requires login. Lists all user devices",
+            "components": ["DevicesList", "AuthGuard"]
+          }
+        ]
+      }
+    },
+    "technologies": {
+      "frontend": ["React", "Next.js", "Tailwind CSS"],
+      "authentication": ["GoogleAuth"],
+      "deployment": ["Vercel"],
+      "other": []
+    },
+    "colorPalette": {
+      "primary": "#1456BC", 
+      "secondary": "#FF8C42",
+      "background": "#FFFFFF",
+      "text": "#333333",
+      "accent": "#E6F0FF"
+    },
+    "styling": {
+      "theme": "simple professional",
+      "typography": {
+        "primaryFont": "Inter, sans-serif",
+        "headingFont": "Inter, sans-serif",
+        "bodyFont": "Inter, sans-serif"
+      }
+    },
+    "authenticationFlow": {
+      "publicPages": ["/", "/register", "/login", "/about"],
+      "protectedPages": ["/device", "/device/[id]", "/dashboard", "/devices"],
+      "authGuard": true
+    }
+  },
+  "agentInstructions": {
+    "projectUnderstanding": [
+      "The project is in design phase with basic page structure being created",
+      "Focus on frontend implementation first, backend will be added later",
+      "Website has a clear division between public and authenticated pages",
+      "Logo consists of connected nodes in blue and orange colors"
+    ],
+    "codingPreferences": {
+      "structure": "Component-based architecture",
+      "styling": "Use Tailwind CSS for styling components",
+      "naming": "Use camelCase for variables, PascalCase for components",
+      "comments": "Add descriptive comments for complex logic"
+    },
+    "prioritizedTasks": [
+      "Create responsive landing page with logo and navigation",
+      "Implement authentication UI (login/register)",
+      "Design dashboard layout and visualization placeholders",
+      "Ensure consistent styling across all pages"
+    ]
+  }
+}
