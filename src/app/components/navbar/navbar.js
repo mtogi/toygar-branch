@@ -21,7 +21,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-[#1456BC] text-white shadow-md">
+    <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
@@ -35,7 +35,7 @@ export default function Navbar() {
                 className="mr-2"
               />
               <span className="text-xl font-bold">
-                <span className="text-white">Data</span>
+                <span className="text-[#1456BC]">Data</span>
                 <span className="text-[#FF8C42]">Sense</span>
               </span>
             </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
             <button
               onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {/* Hamburger Icon */}
@@ -88,13 +88,13 @@ export default function Navbar() {
           <div className="hidden sm:flex sm:space-x-8 sm:items-center">
             <Link
               href="/"
-              className="text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-sm font-medium"
+              className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
             >
               About
             </Link>
@@ -103,20 +103,20 @@ export default function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Dashboard
                 </Link>
 
                 <Link
                   href="/devices"
-                  className="text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Devices
                 </Link>
                 <button
                   onClick={handleSignOut}
-                  className="text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Sign Out
                 </button>
@@ -124,7 +124,7 @@ export default function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-sm font-medium"
+                className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
               >
                 Login
               </Link>
@@ -134,17 +134,17 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isOpen ? "block" : "hidden"} sm:hidden bg-[#1253b3]`}>
+      <div className={`${isOpen ? "block" : "hidden"} sm:hidden bg-white border-t`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link
             href="/"
-            className="block text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-base font-medium"
+            className="block text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-base font-medium"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="block text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-base font-medium"
+            className="block text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-base font-medium"
           >
             About
           </Link>
@@ -153,13 +153,13 @@ export default function Navbar() {
             <>
               <Link
                 href="/dashboard"
-                className="block text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-base font-medium"
+                className="block text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-base font-medium"
               >
                 Dashboard
               </Link>
               <button
                 onClick={handleSignOut}
-                className="block text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-base font-medium w-full text-left"
+                className="block text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-base font-medium w-full text-left"
               >
                 Sign Out
               </button>
@@ -167,7 +167,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="block text-white hover:text-[#FF8C42] px-3 py-2 rounded-md text-base font-medium"
+              className="block text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-base font-medium"
             >
               Login
             </Link>
