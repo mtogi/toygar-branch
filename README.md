@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Flowers & Saints Design Implementation
+
+This project implements a "Flowers & Saints" design theme for a Next.js application, integrating modern UI design with existing user authentication features.
+
+## Features
+
+- Responsive design optimized for all device sizes
+- Light/dark mode with theme support
+- Animated components using Framer Motion
+- Modern UI with Tailwind CSS
+- Preserved user authentication functionality
+
+## Project Structure
+
+The implementation follows a component-based architecture:
+
+- `src/app/page.js` - Main landing page
+- `src/app/components/flowers/` - Contains all design components:
+  - `Header.js` - Navigation header with mobile menu
+  - `Hero.js` - Main hero section
+  - `Services.js` - Services showcase
+  - `Work.js` - Portfolio/work display with filtering
+  - `Testimonials.js` - Client testimonials carousel
+  - `Contact.js` - Contact form and information
+  - `Footer.js` - Site footer with links and info
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Design Adaptations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The implementation adapts the "Flowers & Saints" design concept to create a floral design studio website with:
 
-## Learn More
+- Black and white color scheme with subtle accents
+- Clean typography using the Inter font family
+- Subtle animations for enhanced user experience
+- Responsive grid layouts for all screen sizes
 
-To learn more about Next.js, take a look at the following resources:
+## Authentication Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The existing authentication functionality from the original application has been preserved and integrated into the new design:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Login/Logout functionality in the Header component
+- Protected routes maintained
+- User session state preserved
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js 14
+- React
+- Tailwind CSS
+- Framer Motion
+- next-themes
+- NextAuth.js
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+To customize the design further:
+
+1. Modify Tailwind theme in `tailwind.config.js`
+2. Update component styling in individual component files
+3. Change images in the `public` directory
+4. Modify content in component files
