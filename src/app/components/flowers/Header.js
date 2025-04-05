@@ -48,19 +48,23 @@ export default function Header() {
           <Link href="#services" className="text-sm font-semibold leading-6 text-gray-900">
             Services
           </Link>
-          <Link href="#work" className="text-sm font-semibold leading-6 text-gray-900">
-            Work
-          </Link>
-          <Link href="#contact" className="text-sm font-semibold leading-6 text-gray-900">
-            Contact
+          {status === "authenticated" && (
+            <>
+              <Link href="/dashboard" className="text-sm font-semibold leading-6 text-gray-900">
+                Dashboard
+              </Link>
+              <Link href="/devices" className="text-sm font-semibold leading-6 text-gray-900">
+                Devices
+              </Link>
+            </>
+          )}
+          <Link href="/faq" className="text-sm font-semibold leading-6 text-gray-900">
+            FAQ
           </Link>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {status === "authenticated" ? (
             <div className="flex items-center gap-4">
-              <Link href="/dashboard" className="text-sm font-semibold leading-6 text-gray-900">
-                Dashboard
-              </Link>
               <button
                 onClick={handleSignOut}
                 className="text-sm font-semibold leading-6 text-gray-900"
@@ -124,31 +128,35 @@ export default function Header() {
                   >
                     Services
                   </Link>
+                  {status === "authenticated" && (
+                    <>
+                      <Link
+                        href="/dashboard"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Dashboard
+                      </Link>
+                      <Link
+                        href="/devices"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Devices
+                      </Link>
+                    </>
+                  )}
                   <Link
-                    href="#work"
+                    href="/faq"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Work
-                  </Link>
-                  <Link
-                    href="#contact"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Contact
+                    FAQ
                   </Link>
                 </div>
                 <div className="py-6">
                   {status === "authenticated" ? (
                     <>
-                      <Link
-                        href="/dashboard"
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Dashboard
-                      </Link>
                       <button
                         onClick={() => {
                           handleSignOut();

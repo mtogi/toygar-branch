@@ -116,7 +116,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={handleSignOut}
-                  className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
+                  className="bg-[#FF8C42] text-white hover:bg-[#e67e35] px-4 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   Sign Out
                 </button>
@@ -124,7 +124,7 @@ export default function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-sm font-medium"
+                className="bg-[#1456BC] text-white hover:bg-[#0f4299] px-4 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 Login
               </Link>
@@ -159,7 +159,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={handleSignOut}
-                className="block text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-base font-medium w-full text-left"
+                className="block w-full text-left bg-[#FF8C42] text-white hover:bg-[#e67e35] px-4 py-2 rounded-md text-base font-medium transition-colors"
               >
                 Sign Out
               </button>
@@ -167,7 +167,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="block text-gray-700 hover:text-[#1456BC] px-3 py-2 rounded-md text-base font-medium"
+              className="block bg-[#1456BC] text-white hover:bg-[#0f4299] px-4 py-2 rounded-md text-base font-medium transition-colors"
             >
               Login
             </Link>
