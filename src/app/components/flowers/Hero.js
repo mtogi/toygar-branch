@@ -31,10 +31,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link
-              href="#work"
+              href="/purchase"
               className="apple-button"
             >
-              Explore Our Solutions
+              Get Your Device
             </Link>
             <Link
               href="/dashboard"

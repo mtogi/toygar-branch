@@ -23,6 +23,10 @@ export async function middleware(request) {
   // If the path requires authentication and the user is not authenticated,
   // redirect to the login page
   if (!isPublicPath && !isAuthenticated) {
+    // Special case for purchase page to add a query parameter for redirect message
+    if (path === '/purchase') {
+      return NextResponse.redirect(new URL('/login?purchaseRedirect=true', request.url));
+    }
     return NextResponse.redirect(new URL('/login', request.url));
   }
   

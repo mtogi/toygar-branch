@@ -2,14 +2,24 @@
 
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [infoMessage, setInfoMessage] = useState("");
+
+  useEffect(() => {
+    // Check if user was redirected from purchase page
+    const purchaseRedirect = searchParams.get("purchaseRedirect");
+    if (purchaseRedirect === "true") {
+      setInfoMessage("Please sign in or create an account to purchase your device.");
+    }
+  }, [searchParams]);
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
@@ -24,7 +34,13 @@ export default function LoginPage() {
       if (result?.error) {
         setError(result.error);
       } else {
-        router.push("/"); // Redirect to dashboard after successful login
+        // Check if user was redirected from purchase page
+        const purchaseRedirect = searchParams.get("purchaseRedirect");
+        if (purchaseRedirect === "true") {
+          router.push("/purchase");
+        } else {
+          router.push("/");
+        }
       }
     } catch (err) {
       setError("An error occurred. Please try again.");
@@ -33,7 +49,13 @@ export default function LoginPage() {
 
   const handleGoogleLogin = async () => {
     try {
-      await signIn("google", { callbackUrl: "/" }); // Redirect to dashboard after Google login
+      // Check if user was redirected from purchase page
+      const purchaseRedirect = searchParams.get("purchaseRedirect");
+      if (purchaseRedirect === "true") {
+        await signIn("google", { callbackUrl: "/purchase" });
+      } else {
+        await signIn("google", { callbackUrl: "/" });
+      }
     } catch (err) {
       setError("An error occurred. Please try again.");
     }
@@ -49,6 +71,12 @@ export default function LoginPage() {
         {error && (
           <div className="mb-6 p-3 bg-red-100 text-red-700 rounded-md">
             {error}
+          </div>
+        )}
+
+        {infoMessage && (
+          <div className="mb-6 p-3 bg-blue-100 text-blue-700 rounded-md">
+            {infoMessage}
           </div>
         )}
 
