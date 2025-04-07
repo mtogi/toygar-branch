@@ -32,7 +32,7 @@ export default function DevicePage({ params }) {
 
   useEffect(() => {
     fetchData();
-  }, [deviceId]);
+  }, [deviceId, fetchData]);
 
   // console.log(devices);
   // check if device belongs to user

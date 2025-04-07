@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useSession, signOut } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
@@ -22,10 +23,12 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">DataSense</span>
-            <img
+            <Image
               className="h-8 w-auto"
               src="/logo.png"
               alt="DataSense Logo"
+              width={32}
+              height={32}
             />
           </Link>
         </div>
@@ -94,10 +97,12 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">DataSense</span>
-                <img
+                <Image
                   className="h-8 w-auto"
                   src="/logo.png"
                   alt="DataSense Logo"
+                  width={32}
+                  height={32}
                 />
               </Link>
               <button

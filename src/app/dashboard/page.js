@@ -78,7 +78,7 @@ export default function DashboardPage() {
                 Welcome, {session?.user?.name}
               </h1>
               <p className="mt-1 text-sm text-gray-500">
-                Here's an overview of your IoT environment
+                Here&apos;s an overview of your IoT environment
               </p>
             </div>
             

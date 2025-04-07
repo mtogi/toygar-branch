@@ -23,7 +23,7 @@ export default function FAQPage() {
           <h3 className="text-xl font-semibold mb-2">How do I register a new device?</h3>
           <p className="text-gray-700">
             To register a new device, log in to your account, navigate to the Devices page, and click on the
-            "Register New Device" button. Follow the instructions to connect your Raspberry Pi device.
+            &quot;Register New Device&quot; button. Follow the instructions to connect your Raspberry Pi device.
           </p>
         </div>
         
